@@ -1,0 +1,32 @@
+<div class="container-fluid text-center">
+  <div class="row">
+    <div class="col-md-5">
+      <input class="form-control" type="text" placeholder="Tìm kiếm" [(ngModel)]="searchValue" (keyup)="fetchMovies()" />
+    </div>
+</div>
+  <div class="row">
+    <div
+      class="col-sm-6 col-md-3 col-lg-2"
+      *ngFor="
+        let movie of movies
+          | paginate
+            : {
+                itemsPerPage: pageSize,
+                currentPage: page,
+                totalItems: total
+              }
+          "
+    >
+      <app-movie-item [item]="movie"></app-movie-item>
+    </div>
+  </div>
+  <div class="row ">
+    <div class="col-sm-12">
+        <div class="d-flex justify-content-center">
+            <pagination-controls
+              (pageChange)="handlePageChange($event)"
+            ></pagination-controls>
+          </div>
+    </div>
+  </div>
+</div>

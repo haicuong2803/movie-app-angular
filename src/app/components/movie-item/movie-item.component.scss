@@ -1,0 +1,34 @@
+@import '../../../styles/colors';
+.movie-item{
+    display: block;
+    position: relative;
+    min-height: 300px;
+    background-color: $bgColorLight;
+    border-radius: 1px solid $lightGray;
+    cursor: pointer;
+    &-image{
+        img{
+            width: 100%;
+            height: 275px;
+            border-radius: 5px;
+        }
+    }
+    &-rating{
+        position: absolute;
+        display: flex;
+        align-items: center;
+        border-radius: 5px;
+        background-color: $bgColorLight;
+        padding: 5px 10px;
+        top: 10px;
+        left: 10px;
+        .app-icon{
+            color: $appIconColor;
+        }
+    }
+    &-title{
+        position: absolute;
+        bottom: 5px;
+        left: 10px;
+    }
+}
